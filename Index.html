@@ -15,7 +15,7 @@
 
         var thing = d3.scaleLinear();
         thing.domain([0, 100000]);
-        thing.range(0, width - 20);
+        thing.range(10, width - 10);
 
         svg.append("line").attr("x1", 10).attr("x2", width - 10).attr("y1", 10).attr("y2", 10).attr("stroke-width", 2).style("stroke", "black");
 
