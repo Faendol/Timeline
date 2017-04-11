@@ -9,7 +9,7 @@
     <script>
         var svg = d3.select("body").append("svg").attr("width", window.innerWidth - 20);
 
-        //String[] myevents = {["Time", "Title", "Description"], ["Time", "Title", "Description"]};
+        String[] myevents = {["Time", "Title", "Description"], ["Time", "Title", "Description"]};
 
         var width = svg.attr("width") - 20;
 
@@ -19,7 +19,14 @@
 
         svg.append("line").attr("x1", 10).attr("x2", width - 10).attr("y1", 10).attr("y2", 10).attr("stroke-width", 2).style("stroke", "black");
 
-
+		svg.append("g")
+			.selectAll("circle")
+			.data(myevents)
+			.enter()
+			.append("circle")
+			.attr("cx")
+			.attr("cy", 10);
+		
     </script>
 </body>
 </html>
