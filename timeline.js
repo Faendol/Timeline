@@ -113,6 +113,8 @@ circles
 
         d3.select(this.parentElement)
             .on("mouseover", function (d) {
+                d3.select(this.parentElement).selectAll("path").attr("fill", "black"); d3.select(this.parentElement).selectAll("circle").attr("stroke", "black");
+
                 document.getElementById("title").innerText = d["whatTitle"];
                 document.getElementById("description").innerText = d["whatDesc"];
                 document.getElementById("source").innerText = "Source: " + d["source"];
@@ -128,7 +130,7 @@ circles
                     document.getElementById("date").innerText += " to " + d["whenEnd"].substring(0, d["whenEnd"].indexOf("T"));
                 }
 
-            })
-            .on("mouseout", function (d) { d3.select(this).selectAll("path").attr("fill", "black"); d3.select(this).selectAll("circle").attr("stroke", "black");});
+            });
+            //.on("mouseout", function (d) { d3.select(this).selectAll("path").attr("fill", "black"); d3.select(this).selectAll("circle").attr("stroke", "black");});
 
     });
