@@ -101,7 +101,12 @@ circles
     .enter()
     .append("g")
     .append("circle")
-    .attr("cx", function (d, i) { return thing(Date.parse(d["whenStart"])); })
+    .attr("cx", function (d, i) {
+        if (d["whenEnd"] !== "") {
+            lines.append("line").attr("y1", y).attr("y2", y).attr("x1", function () { return thing(Date.parse(d["whenStart"])); }).attr("x2", function () { return thing(Date.parse(d["whenEnd"])); }).attr("stroke", "white").attr("stroke-linecap", "round").attr("stroke-width", 3);
+        }
+        return thing(Date.parse(d["whenStart"]));
+    })
     .attr("cy", y)
     .attr("r", 5)
     .attr("fill", "white")
@@ -128,15 +133,29 @@ circles
             .on("mouseover", function (d) {
                 var stringz = d["whatTitle"] + "<br/>" + d["whatDesc"] + "<br/>" + d["source"] + "<br/>" + d["whenStart"].substring(0, d["whenStart"].indexOf("T"));
 
+
                 if (d["whenEnd"] !== "") {
-                    document.getElementById("date").innerText += " to " + d["whenEnd"].substring(0, d["whenEnd"].indexOf("T"));
                     stringz += " to " + d["whenEnd"].substring(0, d["whenEnd"].indexOf("T"));
                 }
 
                 tooltip.style("visibility", "visible");
+                //tooltip.text(stringz);
                 tooltip.html(stringz);
             })
-            .on("mousemove", function () { tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");})
-            .on("mouseout", function (d) { tooltip.style("visibility", "hidden");});
+            .on("mousemove", function () { tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px"); tooltip.style("max-width", function () { return (width - d3.event.pageX) + "px";});})
+            .on("mouseout", function (d) { tooltip.html(""); tooltip.style("visibility", "hidden");});
 
     });
+
+//svg.append("g")
+//    .selectAll("line")
+//    .data(alldata)
+//    .enter()
+//    .append("line")
+//    .attr("x1", function (d, i) { return thing(Date.parse(d["whenStart"])); })
+//    .attr("x2", function (d, i) { return thing(Date.parse(d["whenStart"])); })
+//    .attr("y1", y)
+//    .attr("y2", function (d, i) { return y + 50 + (i * 50);})
+//    .attr("stroke-width", 2)
+//    .style("stroke", "black");
+
