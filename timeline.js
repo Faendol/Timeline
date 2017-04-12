@@ -118,6 +118,8 @@ circles
                 document.getElementById("source").innerText = d["source"];
                 document.getElementById("date").innerText = d["whenStart"].substring(0, d["whenStart"].indexOf("T"));
 
+                console.log(this.parentElement);
+
                 if (d["whenEnd"] !== "") {
                     document.getElementById("date").innerText += " to " + d["whenEnd"].substring(0, d["whenEnd"].indexOf("T"));
                 }
@@ -126,16 +128,3 @@ circles
             .on("mouseout", function (d) { });
 
     });
-
-//svg.append("g")
-//    .selectAll("line")
-//    .data(alldata)
-//    .enter()
-//    .append("line")
-//    .attr("x1", function (d, i) { return thing(Date.parse(d["whenStart"])); })
-//    .attr("x2", function (d, i) { return thing(Date.parse(d["whenStart"])); })
-//    .attr("y1", y)
-//    .attr("y2", function (d, i) { return y + 50 + (i * 50);})
-//    .attr("stroke-width", 2)
-//    .style("stroke", "black");
-
