@@ -74,6 +74,19 @@ while (currentYear <= maxyear) {
     currentYear += 1;
 }
 
+var tooltip = d3.select("body")
+    .append("div")
+    .classed("tooltip", true)
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .style("background", "lightsteelblue")
+    .style("border-style", "solid")
+    .style("padding", "2px")
+    .style("border-radius", "8px")
+    .style("white-space", "pre-wrap")
+    .text("a simple tooltip");
+
 lines.append("line")
     .attr("x1", first)
     .attr("x2", second)
@@ -113,29 +126,17 @@ circles
 
         d3.select(this.parentElement)
             .on("mouseover", function (d) {
-                document.getElementById("title").innerText = d["whatTitle"];
-                document.getElementById("description").innerText = d["whatDesc"];
-                document.getElementById("source").innerText = d["source"];
-                document.getElementById("date").innerText = d["whenStart"].substring(0, d["whenStart"].indexOf("T"));
+                var stringz = d["whatTitle"] + "<br/>" + d["whatDesc"] + "<br/>" + d["source"] + "<br/>" + d["whenStart"].substring(0, d["whenStart"].indexOf("T"));
 
                 if (d["whenEnd"] !== "") {
                     document.getElementById("date").innerText += " to " + d["whenEnd"].substring(0, d["whenEnd"].indexOf("T"));
+                    stringz += " to " + d["whenEnd"].substring(0, d["whenEnd"].indexOf("T"));
                 }
 
+                tooltip.style("visibility", "visible");
+                tooltip.html(stringz);
             })
-            .on("mouseout", function (d) { });
+            .on("mousemove", function () { tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");})
+            .on("mouseout", function (d) { tooltip.style("visibility", "hidden");});
 
     });
-
-//svg.append("g")
-//    .selectAll("line")
-//    .data(alldata)
-//    .enter()
-//    .append("line")
-//    .attr("x1", function (d, i) { return thing(Date.parse(d["whenStart"])); })
-//    .attr("x2", function (d, i) { return thing(Date.parse(d["whenStart"])); })
-//    .attr("y1", y)
-//    .attr("y2", function (d, i) { return y + 50 + (i * 50);})
-//    .attr("stroke-width", 2)
-//    .style("stroke", "black");
-
