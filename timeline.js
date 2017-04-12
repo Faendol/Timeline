@@ -117,7 +117,7 @@ circles
 
                 document.getElementById("title").innerText = d["whatTitle"];
                 document.getElementById("description").innerText = d["whatDesc"];
-                document.getElementById("source").innerText = "Source: " + d["source"];
+                document.getElementById("source").innerText = d["source"];
                 d3.select(document.getElementById("sourceLink")).attr("href", d["source"]);
                 document.getElementById("date").innerText = d["whenStart"].substring(0, d["whenStart"].indexOf("T"));
 
