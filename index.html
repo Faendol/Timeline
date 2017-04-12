@@ -2,24 +2,67 @@
 <html>
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Asar|Unica+One|Ubuntu" rel="stylesheet">
     <meta charset="utf-8" />
     <title></title>
     <style>
+	body {
+		position: relative;
+	}
+	h1 {
+		font-family: 'Unica One', cursive;
+		font-size: 50px;
+		padding-bottom: 20px;
+	}
+	text {
+		font-family: 'Ubuntu', sans-serif;
+ 	}
         p {
-            text-align: center;
-            font-family: 'Comic Sans MS';
+        	text-align: center;
+        	font-family: 'Asar', serif;
+		font-size: 25px;
+		margin-bottom: -20px;
         }
+	#title {
+		margin-top: -40px;
+		font-size: 40px;
+		font-weight: 700;
+	}
+
+	#date {
+		font-style: italic;
+	}
+	#howto {
+		font-size: 18px;
+		margin-top: 80px;
+	}
+	.name {
+		font-size: 18px;
+		position: absolute;
+		bottom: -30px;
+		margin: 30px;
+		font-style: italic;
+	}
+	#liam {
+		left: 0;
+	}
+	#ryan {
+		right: 0;
+	}
     </style>
 </head>
 <body>
-    <h1 style="text-align:center">20th Century Dates</h1>
+    <h1 style="text-align:center">Events Impacting WW2 from 1919-06-28 to 1939-09-03</h1>
     <script src="Data.js"></script>
     <script src="jquery-3.2.1.js"></script>
     <script src="d3.js"></script>
     <script src="timeline.js"></script>
-    <p id="title" style="font-size:large;font-weight:bolder">Title</p>
+    <p id="title">Title</p>
     <p id="description">Description</p>
-    <p id="date" style="font-style:italic">Date</p>
+    <p id="date">Date</p>
     <a href="#" id="sourceLink" ><p id="source">Source</p></a>
+    <p id="howto">Hover over any of the ticks on the timeline to view the event</p>
+    <p class="name" id="liam">Liam Jacquet</p>
+    <p class="name" id="ryan">Ryan Britton</p>
 </body>
 </html>
