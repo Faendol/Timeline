@@ -90,7 +90,7 @@ circles
     .append("circle")
     .attr("cx", function (d, i) {
         if (d["whenEnd"] !== "") {
-            lines.append("line").attr("y1", y).attr("y2", y).attr("x1", function () { return thing(Date.parse(d["whenStart"])); }).attr("x2", function () { return thing(Date.parse(d["whenEnd"])); }).attr("stroke", "white").attr("stroke-linecap", "round").attr("stroke-width", 3);
+            lines.append("line").attr("y1", y).attr("y2", y).attr("x1", function () { return thing(Date.parse(d["whenStart"])); }).attr("x2", function () { return thing(Date.parse(d["whenEnd"])); }).attr("stroke", "white").attr("stroke-linecap", "round").attr("stroke-width", 2);
         }
         return thing(Date.parse(d["whenStart"]));
     })
