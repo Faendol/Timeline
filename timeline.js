@@ -115,16 +115,20 @@ circles
             .on("mouseover", function (d) {
                 document.getElementById("title").innerText = d["whatTitle"];
                 document.getElementById("description").innerText = d["whatDesc"];
-                document.getElementById("source").innerText = d["source"];
+                document.getElementById("source").innerText = "Source: " + d["source"];
+                d3.select(document.getElementById("sourceLink")).attr("href", d["source"]);
                 document.getElementById("date").innerText = d["whenStart"].substring(0, d["whenStart"].indexOf("T"));
 
-                console.log(this.parentElement);
+                console.log(this);
+
+                d3.select(this).selectAll("circle").attr("stroke", "red");
+                d3.select(this).selectAll("path").attr("fill", "red");
 
                 if (d["whenEnd"] !== "") {
                     document.getElementById("date").innerText += " to " + d["whenEnd"].substring(0, d["whenEnd"].indexOf("T"));
                 }
 
             })
-            .on("mouseout", function (d) { });
+            .on("mouseout", function (d) { d3.select(this).selectAll("path").attr("fill", "black"); d3.select(this).selectAll("circle").attr("stroke", "black");});
 
     });
