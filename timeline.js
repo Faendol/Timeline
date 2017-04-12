@@ -33,17 +33,17 @@ for (var i = 1; i < alldata.length; i++) {
     times.push(date);
 }
 
-maxyear = Math.ceil(parseInt(maxyear) / 10) * 10;
-minyear = Math.floor(parseInt(minyear) / 10) * 10;
+//maxyear = Math.ceil(parseInt(maxyear) / 10) * 10;
+//minyear = Math.floor(parseInt(minyear) / 10) * 10;
 
 var thing = d3.scaleLinear()
-    .domain([Date.parse(minyear), Date.parse(maxyear)])
+    .domain([mintime, maxtime])
     .range([first, second]);                    
 
 var currentYear = parseInt(minyear);
 var count = 9;
 while (currentYear <= maxyear) {
-    if (count === 9) {
+    if (currentYear % 10 == 0) {
         lines.append("line")
             .attr("x1", function () { return thing(Date.parse(currentYear)); })
             .attr("x2", function () { return thing(Date.parse(currentYear)); })
@@ -75,8 +75,8 @@ while (currentYear <= maxyear) {
 }
 
 lines.append("line")
-    .attr("x1", first)
-    .attr("x2", second)
+    .attr("x1", function () { return thing(Date.parse(minyear));})
+    .attr("x2", function () { return thing(maxtime);})
     .attr("y1", y)
     .attr("y2", y)
     .attr("stroke-width", 5)
