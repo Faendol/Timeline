@@ -144,6 +144,15 @@ var alldata = [
 		 "pictureSource":""
 	      },
    {
+		 "whenStart":"1929-10-29T04:00:00.000Z",
+		 "whenEnd":"",
+		 "whatTitle":"Wall Street Crashed",
+		 "whatDesc":"Lowered global economy leading to economic distress and radical politcal ideas to be seen as a valid option.",
+		 "source":"http://www.investopedia.com/ask/answers/042115/what-caused-stock-market-crash-1929-preceded-great-depression.asp",
+		 "picture":"",
+		 "pictureSource":""
+	      },
+   {
 		 "whenStart":"1939-09-03T04:00:00.000Z",
 		 "whenEnd":"",
 		 "whatTitle":"Britain and France Declare War on Germany",
