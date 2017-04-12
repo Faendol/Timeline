@@ -139,3 +139,6 @@ circles
             //.on("mouseout", function (d) { d3.select(this).selectAll("path").attr("fill", "black"); d3.select(this).selectAll("circle").attr("stroke", "black");});
 
     });
+
+svg.append("text").attr("x", 0).attr("y", y + 2).text(minyear);
+svg.append("text").attr("x", width * 0.96).attr("y", y + 2).text(maxyear);
