@@ -57,7 +57,7 @@ var alldata = [
 		 "whenStart":"1929-10-29T04:00:00.000Z",
 		 "whenEnd":"",
 		 "whatTitle":"Wall Street Crashed",
-		 "whatDesc":"Lowered global economy leading to economic distress and radical politcal ideas to be seen as a valid option.",
+		 "whatDesc":"This lowered the global economy leading to economic distress thus causing radical ideas to be seen as a valid options.",
 		 "source":"http://www.investopedia.com/ask/answers/042115/what-caused-stock-market-crash-1929-preceded-great-depression.asp",
 		 "picture":"",
 		 "pictureSource":""
@@ -66,7 +66,7 @@ var alldata = [
 		 "whenStart":"1931-09-18T04:00:00.000Z",
 		 "whenEnd":"",
 		 "whatTitle":"Japan Invades Manchuria",
-		 "whatDesc":"The LoN did very little, resulting in people loosing some faith.",
+		 "whatDesc":"The LoN did very little, resulting in people loosing some faith in it.",
 		 "source":"http://www.historylearningsite.co.uk/world-war-two/causes-of-ww2/manchuria-1931/",
 		 "picture":"",
 		 "pictureSource":""
@@ -102,7 +102,7 @@ var alldata = [
 		 "whenStart":"1933-03-23T05:00:00.000Z",
 		 "whenEnd":"",
 		 "whatTitle":"Germany's Enabling Act Passes",
-		 "whatDesc":"Effectively made Adolf Hitler the dictator of Germany.",
+		 "whatDesc":"This effectively made Adolf Hitler the dictator of Germany.",
 		 "source":"http://www.historyplace.com/worldwar2/timeline/enabling.htm",
 		 "picture":"",
 		 "pictureSource":""
